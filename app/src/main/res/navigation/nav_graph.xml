@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.login.LoginFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_login_fragment_to_change_password_fragment"
+            app:destination="@id/ChangePasswordFragment" />
+
+        <action
+            android:id="@+id/action_login_fragment_to_register_user_Fragment"
+            app:destination="@id/registerUserFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ChangePasswordFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.ChangePasswordFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_change_password">
+
+        <action
+            android:id="@+id/action_change_password_fragment_to_new_password_fragment"
+            app:destination="@id/newPasswordFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" />
+
+    <fragment
+        android:id="@+id/registerUserFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.RegisterUserFragment"
+        android:label="fragment_register_user"
+        tools:layout="@layout/fragment_register_user" />
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splash_fragment_to_login_fragment"
+            app:destination="@id/LoginFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+</navigation>
