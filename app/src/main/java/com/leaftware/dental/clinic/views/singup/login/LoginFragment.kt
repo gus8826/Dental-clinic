@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.leaftware.dental.clinic.R
@@ -16,13 +15,20 @@ class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var viewModel: LoginViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        initViews()
+        viewModel = ViewModelProvider(this)[LoginViewModel::class.java]
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        /*binding.buttonSecond.setOnClickListener {
+            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+        }*/
+        initViews()
     }
 
     private fun initViews () {
@@ -44,21 +50,21 @@ class LoginFragment : Fragment() {
     }
 
     private fun validates(){
-        viewModel.isEmailEmpty.observe(viewLifecycleOwner, Observer {
+        viewModel.isEmailEmpty.observe(this.viewLifecycleOwner){
             requireContext().toast("El campo email esta vacio")
-        })
+        }
 
-        viewModel.isPasswordEmpty.observe(viewLifecycleOwner, Observer {
+        viewModel.isPasswordEmpty.observe(this.viewLifecycleOwner){
             requireContext().toast("El campo contraseña esta vacio")
-        })
+        }
 
-        viewModel.isEmailFormat.observe(viewLifecycleOwner, Observer {
+        viewModel.isEmailFormat.observe(this.viewLifecycleOwner){
             requireContext().toast("El formato del campo email no es correcto")
-        })
+        }
 
-        viewModel.loginIsSuccessful.observe(viewLifecycleOwner, Observer {
+        viewModel.loginIsSuccessful.observe(this.viewLifecycleOwner){
             //findNavController().navigate(R.id.a)
-        })
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()

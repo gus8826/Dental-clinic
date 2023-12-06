@@ -13,14 +13,14 @@ class LoginViewModel : ViewModel() {
     val isEmailFormat = MutableLiveData<Boolean>()
 
     val loginIsSuccessful = MutableLiveData<Boolean>()
-    fun setLogin( email:String,  password:String){
-        if (email.isEmpty()){
+    fun setLogin(email: String, password: String) {
+        if (email.isEmpty()) {
             isEmailEmpty.value = false
-        }else if(password.isEmpty()){
+        } else if (password.isEmpty()) {
             isPasswordEmpty.value = false
-        }else if (!email.isValidEmail()){
+        } else if (!email.isValidEmail()) {
             isEmailFormat.value = false
-        } else{
+        } else {
             loginIsSuccessful.value = true
         }
     }

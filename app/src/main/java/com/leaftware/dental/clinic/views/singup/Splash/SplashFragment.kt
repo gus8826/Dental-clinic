@@ -1,4 +1,4 @@
-package com.leaftware.dental.clinic.views.singup
+package com.leaftware.dental.clinic.views.singup.Splash
 
 import android.os.Bundle
 import android.os.Handler
@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.leaftware.dental.clinic.R
-import com.leaftware.dental.clinic.views.singup.viewmodels.SplashViewModel
 import com.leaftware.dental.clinic.databinding.FragmentSplashBinding
 
 

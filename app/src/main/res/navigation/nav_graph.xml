@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/ChangePasswordFragment"
-        android:name="com.leaftware.dental.clinic.views.singup.ChangePasswordFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.changePassword.ChangePasswordFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_change_password">
 
@@ -35,19 +35,19 @@
 
     <fragment
         android:id="@+id/newPasswordFragment"
-        android:name="com.leaftware.dental.clinic.views.singup.NewPasswordFragment"
-        android:label="fragment_new_password"
+        android:name="com.leaftware.dental.clinic.views.singup.NewPassword.NewPasswordFragment"
+        android:label="@string/new_fragment_label"
         tools:layout="@layout/fragment_new_password" />
 
     <fragment
         android:id="@+id/registerUserFragment"
-        android:name="com.leaftware.dental.clinic.views.singup.RegisterUserFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.RegisterUser.RegisterUserFragment"
         android:label="fragment_register_user"
         tools:layout="@layout/fragment_register_user" />
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.leaftware.dental.clinic.views.singup.SplashFragment"
+        android:name="com.leaftware.dental.clinic.views.singup.Splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action

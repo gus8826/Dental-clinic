@@ -1,4 +1,4 @@
-package com.leaftware.dental.clinic.views.singup.viewmodels
+package com.leaftware.dental.clinic.views.singup.Splash
 
 import androidx.lifecycle.ViewModel
 
