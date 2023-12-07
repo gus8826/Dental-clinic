@@ -11,17 +11,12 @@ import androidx.navigation.fragment.findNavController
 import com.leaftware.dental.clinic.R
 import com.leaftware.dental.clinic.databinding.FragmentSplashBinding
 
-
 class SplashFragment : Fragment() {
 
-    private var _binding: FragmentSplashBinding? = null
+    private lateinit var _binding: FragmentSplashBinding
+    private val binding get() = _binding
 
-    private val binding get() = _binding!!
-
-    companion object {
-        fun newInstance() = SplashFragment()
-    }
-
+    private val SPLASH_DELAY: Long = 2000
     private lateinit var viewModel: SplashViewModel
 
     override fun onCreateView(
@@ -30,17 +25,17 @@ class SplashFragment : Fragment() {
     ): View {
         _binding = FragmentSplashBinding.inflate(inflater, container, false)
 
-        Handler().postDelayed(Runnable {
-            findNavController().navigate(R.id.action_splash_fragment_to_login_fragment)
-        }, 3000)
+        viewModel = ViewModelProvider(this)[SplashViewModel::class.java]
+
+        viewModel.navigateToLogin.observe(viewLifecycleOwner) { shouldNavigate ->
+            if (shouldNavigate) {
+                findNavController().navigate(R.id.action_splash_fragment_to_login_fragment)
+            }
+        }
+        Handler().postDelayed({
+            viewModel.onSplashTimeout()
+        }, SPLASH_DELAY)
 
         return binding.root
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SplashViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }
