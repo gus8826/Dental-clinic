@@ -1,4 +1,4 @@
-package com.leaftware.dental.clinic.views.singup.RegisterUser
+package com.leaftware.dental.clinic.ui.views.singup.RegisterUser
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -1,4 +1,4 @@
-package com.leaftware.dental.clinic.views.singup.NewPassword
+package com.leaftware.dental.clinic.ui.views.singup.NewPassword
 
 import android.os.Bundle
 import android.view.LayoutInflater

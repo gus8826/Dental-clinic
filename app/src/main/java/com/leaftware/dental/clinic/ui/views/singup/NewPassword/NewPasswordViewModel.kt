@@ -1,4 +1,4 @@
-package com.leaftware.dental.clinic.views.singup.NewPassword
+package com.leaftware.dental.clinic.ui.views.singup.NewPassword
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
